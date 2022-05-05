@@ -1,8 +1,8 @@
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-  }
+// if (process.env.NODE_ENV !== "production") {
+//     require("dotenv").config();
+//   }
 
-  
+
 const express=require('express');
 const cors=require('cors');
 const path=require('path')
@@ -28,12 +28,23 @@ app.use(bodyParser.urlencoded({extended: true, limit:"50mb"}))
 app.use(express.json())
 
 //headers
-app.use((req,res,next)=>
-{
-    res.header('Access-Control-Allow-Origin', "*")
-    res.header('Access-Control-Allow-Header', "*") 
-    next();
-})
+// app.use((req,res,next)=>
+// {
+    // res.header('Access-Control-Allow-Origin', "*")
+    // res.header('Access-Control-Allow-Headers', "*") 
+    // next();
+
+    app.use((req, response, next) => {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+        response.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+        
+        next();
+      });
+    
+//     next();
+// })
 
 //api
 app.use('/api',router)
@@ -58,9 +69,11 @@ app.get('*',(req,res)=>
     }
 })
 
-//cors
-app.use(cors())
-
+// cors
+// app.use(cors())
+app.use(cors({
+    origin: '*'
+}));
 
 
 //server listen

@@ -43,7 +43,7 @@ function QuestionPage() {
                 "Content-Type":"application/json"
             }
         }
-        await axios.post('https://stackoverflow1-deebika.herokuapp.com/api/answers',body,config)
+        await axios.post('https://hackathon-2backend.herokuapp.com/api/answers',body,config)
         .then((res)=>
         {
             console.log(res.data)
