@@ -1,0 +1,13 @@
+.home_index
+{
+    display:flex;
+    min-height: 85vh;
+    min-width: fit-content;
+
+}
+.home_index_content
+{
+    display: flex;
+    width:100%;
+    justify-content:center;
+}

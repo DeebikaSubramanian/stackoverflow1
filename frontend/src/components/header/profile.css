@@ -1,0 +1,41 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.profile_content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 5px 10px 10px 10px #3f3d3d;
+ }
+.auth
+{
+    display: inline;
+    
+}
+button{
+    width:80px;
+    margin-left: 20px;
+}
+.userName
+{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 40px;
+}
+
+@media(width<660px)
+{
+   .profile
+   {
+    margin-left: 90px;
+    height: 100vh;
+   }     
+}
