@@ -39,7 +39,7 @@ const [loading,setLoading]=useState(false);
                 user:user,
             };
             await axios
-            .post("/api/questions", bodyJSON)
+            .post("https://stackoverflow1-deebika.herokuapp.com/api/questions", bodyJSON)
             .then((res) => {
                 alert("Question added successfully")
                 setLoading(false)

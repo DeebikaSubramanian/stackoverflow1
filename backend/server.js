@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+  }
+
+  
 const express=require('express');
 const cors=require('cors');
 const path=require('path')
@@ -26,7 +31,7 @@ app.use(express.json())
 app.use((req,res,next)=>
 {
     res.header('Access-Control-Allow-Origin', "*")
-    res.header('Access-Control-Allow-Header', "*")
+    res.header('Access-Control-Allow-Header', "*") 
     next();
 })
 

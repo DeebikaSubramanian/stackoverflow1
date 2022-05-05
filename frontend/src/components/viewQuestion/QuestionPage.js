@@ -43,7 +43,7 @@ function QuestionPage() {
                 "Content-Type":"application/json"
             }
         }
-        await axios.post('/api/answers',body,config)
+        await axios.post('https://stackoverflow1-deebika.herokuapp.com/api/answers',body,config)
         .then((res)=>
         {
             console.log(res.data)
@@ -61,7 +61,7 @@ useEffect(()=>
 {
     async function getQuestionDetails()
     {
-        await axios.get(`/api/questions/${id}`)
+        await axios.get(`https://stackoverflow1-deebika.herokuapp.com/api/questions/${id}`)
         .then((res)=>
         {
             console.log(res.data[0])
@@ -77,7 +77,7 @@ useEffect(()=>
 
 async function updatedAnswerDetails()
 {
-    await axios.get(`/api/questions/${id}`)
+    await axios.get(`https://stackoverflow1-deebika.herokuapp.com/api/questions/${id}`)
     .then((res)=>
     {
         console.log(res.data[0])
@@ -97,7 +97,7 @@ question_id:id,
 comment:comment,
 user:user
     }
-    await axios.post(`/api/comments/${id}`,body)
+    await axios.post(`https://stackoverflow1-deebika.herokuapp.com/api/comments/${id}`,body)
     .then((res)=>
     {
         console.log(res.data)
@@ -139,7 +139,7 @@ user:user
                             </div>
                         </div>
                         <div className='question_answer'>
-                            <p>{parse(questionDetails?.body)}
+                            <p>{questionDetails?.body}
                             </p>
                             <div className='author'>
                                 <small>{new Date(questionDetails?.created_at).toLocaleString()}</small>

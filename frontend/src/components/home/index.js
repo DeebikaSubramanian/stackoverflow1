@@ -11,7 +11,7 @@ useEffect(()=>
 {
 async function getQuestion()
 {
-await axios.get('/api/questions')
+await axios.get('https://stackoverflow1-deebika.herokuapp.com/api/questions')
 .then((res)=>
 {
   console.log(res.data)
