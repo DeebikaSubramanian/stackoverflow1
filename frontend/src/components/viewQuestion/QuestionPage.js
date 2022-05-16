@@ -107,13 +107,14 @@ user:user
     })
 }
 }
-
+let x=String(questionDetails?.title);
+let y=String(questionDetails?.body);
     return (
         <div className="questionPage">
             <div className="questionPage_container">
                 <div className="questionPage_top">
                     <h2 className="questionPage_question">
-                       {questionDetails?.title}</h2>
+                    {parse(x)}</h2>
                     <Link to='/AddQuestion'>
                         <button>Ask Question</button>
                     </Link>
@@ -139,7 +140,7 @@ user:user
                             </div>
                         </div>
                         <div className='question_answer'>
-                            <p>{questionDetails?.body}
+                            <p>{parse(y)}
                             </p>
                             <div className='author'>
                                 <small>{new Date(questionDetails?.created_at).toLocaleString()}</small>

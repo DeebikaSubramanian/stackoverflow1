@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {Avatar} from '@material-ui/core'
 import './allquestions.css';
 import parse from 'html-react-parser';
-// import question from '../../../../backend/collections/question';
+
 
 function AllQuestions(props) {
 
